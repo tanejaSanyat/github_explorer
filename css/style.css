@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -191,6 +191,10 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
   font-size: 100%;
   /* 1 */
   font-weight: inherit;
@@ -338,6 +342,14 @@ ul,
 menu {
   list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
   padding: 0;
 }
 
@@ -637,10 +649,6 @@ html {
 
 .mb-10 {
   margin-bottom: 2.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
 }
 
 .mr-2 {
@@ -1110,6 +1118,10 @@ html {
   padding-top: 2rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1135,6 +1147,11 @@ html {
 
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
   line-height: 1;
 }
 
@@ -1166,6 +1183,10 @@ html {
   line-height: 1rem;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .font-light {
   font-weight: 300;
 }
@@ -1176,6 +1197,10 @@ html {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-gray-200 {
@@ -1301,11 +1326,6 @@ html {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-gray-100:hover {
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -1443,10 +1463,6 @@ html {
     width: 50%;
   }
 
-  .md\:w-3\/5 {
-    width: 60%;
-  }
-
   .md\:w-36 {
     width: 9rem;
   }
@@ -1541,10 +1557,6 @@ html {
 
   .lg\:w-2\/3 {
     width: 66.666667%;
-  }
-
-  .lg\:w-2\/5 {
-    width: 40%;
   }
 
   .lg\:w-3\/5 {
