@@ -1370,6 +1370,11 @@ html {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
+  .mobiles\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 540px) {
@@ -1393,6 +1398,11 @@ html {
   .tablets\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .tablets\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
   }
 }
 
