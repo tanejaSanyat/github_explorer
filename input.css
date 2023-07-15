@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+}
+.active {
+  background-color: rgb(206, 208, 214);
+  border-bottom: rgb(206, 208, 214);
+}
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0 2rem;
+}
+.footer a {
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.footer span {
+  font-family: "Poiret One", cursive;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+.footer .socialIcon {
+  color: #a5a5a5;
+  font-size: 1.8rem;
+  margin: 0 8px;
+  transition: all 0.2s ease-in-out;
+}
+.footer .linked:hover {
+  color: white;
+}
+.footer .github:hover {
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  .footer span {
+    font-size: 1.2rem;
+  }
+}

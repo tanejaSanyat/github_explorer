@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitFolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/dffffa55e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8244860283632013"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <nav
+      class="flex justify-center mobiles:justify-between px-4 py-4 border-b items-center border-b-gray-300 sticky top-0 backdrop-blur-md"
+    >
+      <a href="./index.html" target="_blank">
+        <img src="./content/logo-transparent.png" class="w-44" alt="" />
+      </a>
+
+      <a class="hidden mobiles:block" href="index.html" target="_blank"
+        ><span class="cursor-pointer hover:text-gray-500 transition-all"
+          >Search another username?</span
+        ></a
+      >
+    </nav>
+    <!-- PROFILE -->
+    <div class="flex flex-col gap-8 mb-10" id="details-box">
+      <!-- LOADER  -->
+      <div
+        class="h-screen items-center justify-center flex text-center w-screen"
+        id="loader"
+      >
+        <div role="status">
+          <svg
+            aria-hidden="true"
+            class="w-20 h-20 mr-2 text-gray-300 animate-spin dark:text-gray-800 fill-gray-800"
+            viewBox="0 0 100 101"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+              fill="currentColor"
+            />
+            <path
+              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+              fill="currentFill"
+            />
+          </svg>
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- USER-DETAILS -->
+      <div
+        class="w-11/12 mx-auto box-border flex-col gap-8 py-8 hidden min-h-screen"
+        id="user-details"
+      >
+        <!-- BASIC INFO -->
+        <div
+          class="flex justify-between gap-10 lg:items-center bg-white flex-col lg:flex-row items-start"
+        >
+          <div class="flex justify-start gap-2 tablets:gap-8 items-center">
+            <!-- PROFILE PICTURE -->
+            <img
+              src="./content/user-picture.png"
+              class="rounded-full max-w-[80px] w-1/3 mobiles:w-32 tablets:w-36 tablets:max-w-4xl sm:w-40 md:w-48"
+              alt=""
+              id="avatar"
+            />
+            <!-- NAME AND USERNAME -->
+            <div class="flex flex-col gap-1 mobiles:gap-2">
+              <h1
+                class="text-[24px] tablets:text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-800"
+                id="name"
+              >
+                Saksham Gambhir
+              </h1>
+              <h2
+                class="text-[16px] mobiles:text-lg tablets:text-xl sm:text-2xl font-medium text-gray-500"
+                id="username"
+              >
+                @sakshxm08
+              </h2>
+              <a id="url" target="_blank">
+                <button
+                  class="w-fit lg:flex hidden gap-4 justify-center items-center mt-3 border-2 font-medium border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all px-5 py-1 rounded-full"
+                >
+                  Open Profile<i
+                    class="fa-solid fa-arrow-up-right-from-square"
+                  ></i>
+                </button>
+              </a>
+            </div>
+          </div>
+          <!-- FOLLOWERS AND FOLLOWING -->
+          <div
+            class="flex mobiles:flex-row flex-col sm:gap-0 gap-4 justify-between items-start lg:w-fit w-full lg:border-none border-b border-b-gray-300 lg:pb-0 pb-8"
+          >
+            <div class="flex gap-12 lg:pl-4">
+              <span class="flex flex-col gap-1">
+                <h1
+                  class="text-xl sm:text-2xl md:text-3xl text-gray-800 text-center font-medium"
+                  id="followers-count"
+                >
+                  23
+                </h1>
+                <h4
+                  class="text-lg md:text-xl text-gray-800 text-center font-medium"
+                >
+                  followers
+                </h4>
+              </span>
+              <span class="flex flex-col gap-1">
+                <h1
+                  class="text-lg sm:text-2xl md:text-3xl text-gray-800 text-center font-medium"
+                  id="following-count"
+                >
+                  23
+                </h1>
+                <h4
+                  class="text-lg md:text-xl group text-gray-800 text-center font-medium"
+                >
+                  following
+                </h4>
+              </span>
+            </div>
+            <a id="url" target="_blank">
+              <button
+                class="w-fit flex lg:hidden gap-4 justify-center items-center mt-3 border-2 font-medium border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition-all px-5 py-1 rounded-full"
+              >
+                Open Profile<i
+                  class="fa-solid fa-arrow-up-right-from-square"
+                ></i>
+              </button>
+            </a>
+          </div>
+        </div>
+        <!-- ----------- -->
+        <!-- INFORMATION -->
+        <div class="sm:flex justify-between">
+          <!-- BIO -->
+          <div class="sm:w-1/2 lg:w-3/5" id="bio">
+            Passionate front-end web developer with over 1 year of experience
+            using JavaScript, HTML5, CSS and Bootstrap. Transforming ideas into
+            reality on web.
+          </div>
+          <!-- CREATED AND UPDATED -->
+          <div
+            class="flex flex-col gap-2 sm:items-end sm:border-l text-gray-400 sm:text-gray-800 sm:border-l-gray-300 sm:pl-8 pt-8 sm:pt-0"
+          >
+            <span>Created on: <span id="created"></span></span>
+            <span>Last Updated on: <span id="updated"></span></span>
+          </div>
+        </div>
+        <!-- ----------- -->
+        <div
+          class="flex flex-col lg:flex-row gap-8 justify-between pt-10 border-t border-t-gray-300"
+        >
+          <div
+            class="flex lg:hidden w-full overflow-x-auto overflow-y-hidden relative"
+          >
+            <div
+              class="flex lg:hidden items-stretch flex-1 justify-stretch mx-auto my-2 min-w-[30rem] overflow-x-auto overflow-y-hidden sm:w-full border-b border-b-gray-200"
+            >
+              <button
+                class="w-1/4 text-center hover:bg-gray-200 px-2 cursor-pointer py-3 transition-all rounded-tr-md rounded-tl-md tablinks active"
+                onclick="openDetail(event, 'followers')"
+              >
+                Followers
+              </button>
+              <button
+                class="w-1/4 text-center hover:bg-gray-200 px-2 cursor-pointer py-3 transition-all rounded-tr-md rounded-tl-md tablinks"
+                onclick="openDetail(event, 'following')"
+              >
+                Following
+              </button>
+              <button
+                class="w-1/4 text-center hover:bg-gray-200 px-2 cursor-pointer py-3 transition-all rounded-tr-md rounded-tl-md tablinks"
+                onclick="openDetail(event, 'repositories')"
+              >
+                Repositories
+              </button>
+              <button
+                class="w-1/4 text-center hover:bg-gray-200 px-2 cursor-pointer py-3 transition-all rounded-tr-md rounded-tl-md tablinks"
+                onclick="openDetail(event, 'info')"
+              >
+                Info
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex items-end justify-end text-xs mobiles:hidden -mt-7 z-20"
+          >
+            Swipe right for more options
+          </div>
+          <!-- REPO, FOLL. -->
+          <div class="flex items-start lg:gap-10" id="detail-parent">
+            <!-- FOLLOWERS AND FOLLOWING LIST -->
+            <div class="flex flex-col gap-8">
+              <div
+                class="w-max flex flex-col bg-white text-left tabcontent"
+                id="followers"
+              >
+                <h2 class="text-xl sm:text-2xl font-medium pr-8 pb-2">
+                  Followers
+                  <span class="text-xl" id="followers-list-count">(3)</span>
+                </h2>
+                <div
+                  id="followers-list"
+                  class="w-max pt-4 max-h-72 overflow-scroll flex flex-col gap-2 items-start text-base font-light"
+                >
+                  <span class="flex gap-4 items-center"
+                    ><img
+                      src="./content/user-picture.png"
+                      class="rounded-full w-8 aspect-square"
+                    /><span
+                      class="hover:underline underline-offset-3 cursor-pointer"
+                      onclick="fetchUser('sakshxm08')"
+                      >sakshxm08</span
+                    ></span
+                  >
+                  <span class="flex gap-4 items-center"
+                    ><img
+                      src="./content/user-picture.png"
+                      class="rounded-full w-8 aspect-square"
+                    /><span>Praanya Bhatnagar</span></span
+                  >
+                  <span class="flex gap-4 items-center"
+                    ><img
+                      src="./content/user-picture.png"
+                      class="rounded-full w-8 aspect-square"
+                    /><span>Tanisha Bansal</span></span
+                  >
+                </div>
+              </div>
+              <div
+                class="w-max hidden lg:flex flex-col bg-white text-left tabcontent"
+                id="following"
+              >
+                <h2 class="text-2xl font-medium pr-8 pb-2">
+                  Following
+                  <span class="text-xl" id="following-list-count">(3)</span>
+                </h2>
+                <div
+                  id="following-list"
+                  class="w-max pt-4 max-h-72 overflow-scroll flex flex-col gap-2 items-start text-base font-light"
+                >
+                  <span class="flex gap-4 items-center"
+                    ><img
+                      src="./content/user-picture.png"
+                      class="rounded-full w-8 aspect-square"
+                    /><span>Sanyat Taneja</span></span
+                  >
+                  <span class="flex gap-4 items-center"
+                    ><img
+                      src="./content/user-picture.png"
+                      class="rounded-full w-8 aspect-square"
+                    /><span>Praanya Bhatnagar</span></span
+                  >
+                  <span class="flex gap-4 items-center"
+                    ><img
+                      src="./content/user-picture.png"
+                      class="rounded-full w-8 aspect-square"
+                    /><span>Tanisha Bansal</span></span
+                  >
+                  <span class="flex gap-4 items-center"
+                    ><img
+                      src="./content/user-picture.png"
+                      class="rounded-full w-8 aspect-square"
+                    /><span>Tanisha Bansal</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- VERTICAL DIVIDER -->
+            <div
+              class="hidden lg:block border-r border-r-gray-300 h-full"
+            ></div>
+            <div class="lg:flex flex-col hidden tabcontent" id="repositories">
+              <h2 class="text-2xl font-medium pb-5">
+                Top Public Repositories
+                <span class="text-xl" id="repo-list-count">(3)</span>
+              </h2>
+              <div class="flex justify-between">
+                <ol
+                  class="list-disc text-lg space-y-3 list-inside"
+                  id="repo-list"
+                >
+                  <li>Shopify</li>
+                  <li>Portfolio</li>
+                  <li>Onetap</li>
+                  <li>Github</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div
+            id="info"
+            class="w-max -mt-10 lg:mt-0 hidden lg:flex flex-col gap-2 items-start tabcontent"
+          >
+            <span id="location"></span>
+            <span class="flex items-center gap-2">
+              <span class="flex gap-2 items-center">
+                <i class="fa-regular fa-folder-open"></i
+                ><span>Public Repo :</span></span
+              >
+              <span id="repo-count">10</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPOS -->
+      <div class="w-3/4 mx-auto box-border flex-col flex">
+        <div
+          class="text-lg mx-auto text-gray-800 font-medium py-8 border-t border-t-gray-300 w-full text-center hidden"
+          id="text-repo"
+        >
+          Select a repo to view its details here.
+        </div>
+        <div
+          class="items-center justify-center hidden text-center py-8 border-t border-t-gray-300"
+          id="loader-repo"
+        >
+          <div role="status">
+            <svg
+              aria-hidden="true"
+              class="w-14 h-14 mr-2 text-gray-300 animate-spin dark:text-gray-800 fill-gray-800"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="currentColor"
+              />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentFill"
+              />
+            </svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <div
+          class="hidden flex-col items-start-justify-start pt-8 border-t border-t-gray-300"
+          id="repo-section"
+        >
+          <div
+            class="md:flex-row flex-col flex md:items-center gap-4 md:gap-2 lg:gap-4 md:justify-between"
+          >
+            <div class="lg:flex-row flex-col flex gap-2 lg:gap-6 justify-start">
+              <div class="max-w-xl md:max-w-sm lg:max-w-lg truncate">
+                <h2
+                  class="text-3xl lg:text-4xl font-semibold truncate"
+                  id="repo-name"
+                >
+                  chatApp hasjdcfiencwiekjbcfbdcbkfb
+                </h2>
+              </div>
+              <span
+                class="flex items-center text-base gap-2 text-gray-600 hover:text-gray-800 transition-all"
+                >(
+                <span class="flex gap-3 items-center"
+                  ><img
+                    src="./content/user-picture.png"
+                    class="rounded-full w-6 aspect-square"
+                    id="owner-img"
+                  /><span
+                    class="hover:underline underline-offset-4 cursor-pointer text-base truncate"
+                    onclick="fetchUser('sakshxm08')"
+                    id="repo-owner"
+                    >sakshxm08</span
+                  ></span
+                >)</span
+              >
+            </div>
+            <div
+              class="flex max-w-xl md:max-w-sm md:w-1/2 md:items-end md:justify-end lg:w-1/4 truncate"
+            >
+              <h4 class="text-lg md:text-xl text-gray-400 flex gap-2 truncate">
+                -
+                <a
+                  class="transition-all hover:underline underline-offset-4 hover:text-gray-600 cursor-pointer truncate"
+                  id="repo-link"
+                >
+                  sakshxm08/chatApp
+                </a>
+              </h4>
+            </div>
+          </div>
+          <div
+            class="flex gap-8 lg:gap-0 lg:flex-row flex-col py-5 justify-between"
+          >
+            <span
+              class="text-base w-full lg:w-2/3 lg:border-r border-r-gray-300 pr-14"
+              id="repo-desc"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Corporis, eum non. Fugit minus unde, laborum natus aliquam quasi
+              inventore, distinctio harum ipsum, eligendi nihil iste! Unde
+              laboriosam ipsam corporis non sint inventore praesentium quaerat
+              maxime harum, hic dolorem tempora! Suscipit molestias debitis
+              facilis. Magni voluptatum perferendis provident autem! Modi,
+              porro.</span
+            >
+            <div
+              class="flex w-max pt-4 lg:py-0 pr-8 lg:pr-0 flex-col gap-1 text-base items-start border-t border-t-gray-300 lg:border-none"
+            >
+              <span
+                ><i class="fa-solid fa-star mr-3 w-4 aspect-square"></i> Stars:
+                <span id="repo-stars">3</span></span
+              >
+              <span
+                ><i class="fa-solid fa-code-fork mr-3 w-4 aspect-square"></i>
+                Forks: <span id="repo-forks">2</span></span
+              >
+              <span
+                ><i class="fa-solid fa-code-commit mr-3 w-4 aspect-square"></i>
+                No. of Commits: <span id="repo-commits">2</span></span
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col w-max pt-4 lg:py-0 pr-8 lg:pr-0 border-t border-t-gray-300 lg:border-none"
+          >
+            <span class="text-gray-400 text-base"
+              >Created on: <span id="repo-created"></span
+            ></span>
+            <span class="text-gray-400 text-base"
+              >Updated on: <span id="repo-updated"></span
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer bg-gray-800 text-gray-200">
+      <span class="footerText">
+        Handcrafted by
+        <a
+          href="https://sakshxm08.netlify.app/"
+          class="hover:underline hover:underline-offset-4 hover:text-white"
+          target="_blank"
+          >@sakshxm08</a
+        >
+        - &copy;twentytwentythree</span
+      >
+      <div class="social">
+        <a href="https://www.linkedin.com/in/sakshxm08/"
+          ><i class="fa-brands fa-linkedin linked socialIcon"></i></a
+        ><a href="https://github.com/sakshxm08"
+          ><i class="fa-brands fa-github github socialIcon"></i
+        ></a>
+      </div>
+    </div>
+    <script>
+      // document.getElementById("darkMode").addEventListener("click", () => {
+      //   document.querySelector("html").classList.toggle("dark");
+      // });
+    </script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
